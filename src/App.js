@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import React, { useState } from 'react'
+// import Alert from './Components/Alert';
 
 
 function App() {
@@ -12,18 +13,21 @@ function App() {
     
     if(mode === 'light'){
       setMode('dark');
+      document.body.style.backgroundColor='#042743';
 
     }
     else{
       setMode('light');
+      document.body.style.backgroundColor='white';
     }
   }
   return (
       <>
       <Navbar title="TextUtils" mode={mode}  toggleMode={toggleMode} aboutText="About TextUtils"   />
+     {/* <strong> <Alert /></strong>  */}
       
       <div className="container my-3">
-      <TextForm  heading="Enter text to analayze below"/> 
+      <TextForm  heading="Enter text to analayze below" mode={mode}/> 
       {/* <About></About> */}
 
       </div>
